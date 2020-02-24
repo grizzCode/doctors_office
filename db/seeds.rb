@@ -21,7 +21,8 @@ specialty = ['DERMATOLOGY', 'ANESTHESIOLOGY', 'DIAGNOSTIC RADIOLOGY', 'EMERGENCY
 
     Appointment.create(
       doctor_id: doctor.id,
-      patient_id: patient.id
+      patient_id: patient.id,
+      date: Faker::Date.forward(days: 60)
     )
   end
 end

@@ -1,2 +1,20 @@
-<h1>Doctors#new</h1>
-<p>Find me in app/views/doctors/new.html.erb</p>
+ <nav>
+    <div class="nav-wrapper teal lighten-4">
+      <ul class="right hide-on-med-and-down teal lighten-4">
+        <li><%= link_to 'Go Back', doctors_path, class: "waves-effect waves-light btn" %></li>
+      </ul>
+    </div>
+  </nav>
+  <h3>ADD DOCTOR</h3>
+<%= form_with(model: @doctor, local: true, class: "ui form" ) do |f| %>
+<div class="field">
+  <%= f.text_field :first_name, required: true, placeholder: "First Name" %>
+  <br>
+  <%= f.text_field :last_name, required: true, placeholder: "Last Name" %>
+  <br>
+  <%= f.text_field :specialty, required: true, placeholder: "Specialty" %>
+</div>
+  <%= f.submit nil, class: "btn waves-effect waves-light" %>
+
+<% end %>
+

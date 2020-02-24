@@ -48,5 +48,6 @@ class DoctorsController < ApplicationController
  def set_doctor
     @doctor = Doctor.find(params[:id])
   end
+
  end
  

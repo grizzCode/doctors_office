@@ -1,2 +1,12 @@
-<h1>Doctors#show</h1>
-<p>Find me in app/views/doctors/show.html.erb</p>
+ <nav>
+    <div class="nav-wrapper teal lighten-4">
+      <ul class="right hide-on-med-and-down teal lighten-4">
+        <li><%= link_to 'Go Back', doctors_path, class: "waves-effect waves-light btn" %></li>
+        <li><%= link_to 'View Appointments', doctor_appointment_path(@doctor), class: "waves-effect waves-light btn" %></li>
+        <li><%= link_to 'Edit Doctor', edit_doctor_path(@doctor), class: "waves-effect waves-light btn" %></li>
+        <li><%= link_to 'Delete Doctor', doctor_path(@doctor), method: :destroy, class: "waves-effect waves-light btn" %></li>
+      </ul>
+    </div>
+  </nav>
+<h3><%= @doctor.full_name.upcase %></h3>
+<h5><%= @doctor.specialty %></h5>
