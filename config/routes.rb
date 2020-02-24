@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root 'appointments#index'
+  root 'doctors#index'
 
     resources :patients
     resources :doctors do

@@ -46,6 +46,7 @@ group :development do
   gem 'pry-rails'
   gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'master'
   gem 'materialize-sass', '~> 1.0.0'
+  gem 'material_icons' 
 end
 
 group :test do
