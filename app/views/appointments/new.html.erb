@@ -7,18 +7,17 @@
   </nav>
 <body>
 <h3>REQUEST APPOINTMENT</h3>
-    <%= form_with(model: [@doctor, @appointment], local: true) do |f| %>
-      
-    <%= f.select :patient_id, Patient.all.collect { |u| [u.full_name, u.id] }, class: 'browser-default' %>
-      
-      <label>Select Patient</label>
+  <div class="row">
+    <div class="input-field col s6">
+      <%= form_with(model: [@doctor, @appointment], local: true) do |f| %>
+      <%= f.label :patient  %>
+      <%= f.select :patient_id, Patient.all.collect { |u| [u.full_name, u.id] } %>
+  
+        <%= f.date_field :date %>
+        <%= f.submit nil, class: "btn waves-effect waves-light" %>
+        <% end %>
     </div>
-   
-      <br>
-      <%= f.date_field :date %>
-      <%= f.submit nil, class: "btn waves-effect waves-light" %>
-      <% end %>
-    </div>
+  </div>
   </body>
 
  
