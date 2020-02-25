@@ -21,7 +21,9 @@ gem 'jbuilder', '~> 2.7'
 # gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
-
+  gem 'materialize-sass', '~> 1.0.0'
+  gem 'material_icons' 
+  gem 'simple_form'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
@@ -45,8 +47,7 @@ group :development do
   gem 'binding_of_caller'
   gem 'pry-rails'
   gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'master'
-  gem 'materialize-sass', '~> 1.0.0'
-  gem 'material_icons' 
+
 end
 
 group :test do

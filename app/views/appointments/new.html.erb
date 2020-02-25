@@ -1,12 +1,24 @@
+ <nav>
+    <div class="nav-wrapper teal lighten-4">
+      <ul class="right hide-on-med-and-down teal lighten-4">
+        <li><%= link_to 'Go Back', doctor_path(@doctor), class: "waves-effect waves-light btn" %></li>
+      </ul>
+    </div>
+  </nav>
+<body>
 <h3>REQUEST APPOINTMENT</h3>
- 
-      <%= form_with(model: [@doctor, @appointment], local: true) do |f| %>
-      <%= f.select :patient_id, @patient.collect { |u| [u.full_name, u.id] } %>
-    
+    <%= form_with(model: [@doctor, @appointment], local: true) do |f| %>
+      
+    <%= f.select :patient_id, Patient.all.collect { |u| [u.full_name, u.id] }, class: 'browser-default' %>
+      
+      <label>Select Patient</label>
+    </div>
+   
       <br>
-     
       <%= f.date_field :date %>
       <%= f.submit nil, class: "btn waves-effect waves-light" %>
       <% end %>
     </div>
-  
+  </body>
+
+ 
