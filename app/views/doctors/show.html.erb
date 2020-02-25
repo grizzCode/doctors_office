@@ -4,7 +4,7 @@
         <li><%= link_to 'Go Back', doctors_path, class: "waves-effect waves-light btn" %></li>
         <li><%= link_to 'View Appointments', doctor_appointment_path(@doctor), class: "waves-effect waves-light btn" %></li>
         <li><%= link_to 'Edit Doctor', edit_doctor_path(@doctor), class: "waves-effect waves-light btn" %></li>
-        <li><%= link_to 'Delete Doctor', doctor_path(@doctor), method: :destroy, class: "waves-effect waves-light btn" %></li>
+        <li><%= link_to 'Delete Doctor', doctor_path(@doctor), method: :delete, class: "waves-effect waves-light btn" %></li>
       </ul>
     </div>
   </nav>

@@ -1,2 +1,18 @@
-<h1>Patients#edit</h1>
-<p>Find me in app/views/patients/edit.html.erb</p>
+ <nav>
+    <div class="nav-wrapper teal lighten-4">
+      <ul class="right hide-on-med-and-down teal lighten-4">
+        <li><%= link_to 'Go Back', @patient, class: "waves-effect waves-light btn" %></li>
+      </ul>
+    </div>
+  </nav>
+  <h3>EDIT PATIENT</h3>
+<%= form_with(model: @patient, local: true, class: "ui form" ) do |f| %>
+<div class="field">
+  <%= f.text_field :first_name, required: true, placeholder: "First Name" %>
+  <br>
+  <%= f.text_field :last_name, required: true, placeholder: "Last Name" %>
+  <br>
+</div>
+  <%= f.submit nil, class: "btn waves-effect waves-light" %>
+
+<% end %>
