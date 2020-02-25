@@ -6,7 +6,7 @@
     </div>
   </nav>
   <h3>EDIT DOCTOR</h3>
-<%= form_with(model: @doctor, local: true, class: "ui form" ) do |f| %>
+<%= form_with(model: @doctor, local: true, class: "input-field col s6" ) do |f| %>
 <div class="field">
   <%= f.text_field :first_name, required: true, placeholder: "First Name" %>
   <br>
