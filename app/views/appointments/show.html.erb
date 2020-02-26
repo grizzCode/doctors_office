@@ -1,2 +1,12 @@
-<h1>Appointment </h1>
+<nav>
+    <div class="nav-wrapper teal lighten-4">
+      <ul class="right hide-on-med-and-down teal lighten-4">
+        <li><%= link_to 'Go Back', patient_path(@patient), class: "waves-effect waves-light btn" %></li>
+      </ul>
+    </div>
+  </nav>
+<h5><%= "Patient: #{@patient.full_name}"%></h5>
+<h5><%= "Appointment with: #{@doctor.full_name}, #{@doctor.specialty}"%></h5>
+<p><%= "Scheduled : #{@appointment.date}"%></p>
+
 

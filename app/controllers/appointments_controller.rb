@@ -1,6 +1,6 @@
 class AppointmentsController < ApplicationController
   before_action :set_doctor
-  before_action :set_patient, only: %i[new create update]
+  before_action :set_patient, only: [:new, :create, :update]
   def index
     @appointments = @doctor.appointments.all
   end
@@ -37,7 +37,8 @@ class AppointmentsController < ApplicationController
   end
 
   def show
-   #before_action
+   @patient = Patient.find(params[:id])
+   @appointment = Appointment.find(params[:id])
   end
 
   private

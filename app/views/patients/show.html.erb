@@ -2,10 +2,17 @@
     <div class="nav-wrapper teal lighten-4">
       <ul class="right hide-on-med-and-down teal lighten-4">
         <li><%= link_to 'Go Back', patients_path, class: "waves-effect waves-light btn" %></li>
-        <li><%= link_to 'View Appointments', class: "waves-effect waves-light btn" %></li>
         <li><%= link_to 'Edit Patient', edit_patient_path(@patient), class: "waves-effect waves-light btn" %></li>
         <li><%= link_to 'Delete Patient', patient_path(@patient), method: :delete, class: "waves-effect waves-light btn" %></li>
       </ul>
     </div>
   </nav>
 <h3><%= @patient.full_name.upcase %></h3>
+ <div class="divider"></div>
+ <% @patient.appointments.each do |appt| %>
+    <br>
+    <li>
+      <%= link_to "#{appt.date} with #{appt.doctor.full_name}", doctor_appointment_path(appt.doctor) %>
+    </li>
+  <% end %>
+
