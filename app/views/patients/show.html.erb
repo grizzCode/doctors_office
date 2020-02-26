@@ -9,6 +9,7 @@
   </nav>
 <h3><%= @patient.full_name.upcase %></h3>
  <div class="divider"></div>
+ <h6>Current Appointments:</h6>
  <% @patient.appointments.each do |appt| %>
     <br>
     <li>
