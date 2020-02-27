@@ -29,10 +29,11 @@ However, if we try to call:
 
 Conversely, if we try the following:
 ```ruby
-var = ClassName.new`
+var = ClassName.new
 var.instance_method 
 ```
 This will return "I am an instance method"
+
 But we cannot call...
 ```ruby
 var = ClassName.new
