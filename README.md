@@ -30,12 +30,17 @@ However, if we try to call:
 `ClassName.instance_method`, this yields an Unidentified Method Error
 
 Conversely, if we try the following:
-`var = ClassName.new`
-`var.instance_method` this will return "I am an instance method"
-
-But we cannot call:
-`var = ClassName.new`
-`var.class_method` as it will also return an Unidentified Method Error
+```ruby
+var = ClassName.new`
+var.instance_method 
+```
+This will return "I am an instance method"
+But we cannot call...
+```ruby
+var = ClassName.new
+var.class_method
+```
+...as it will also return an Unidentified Method Error
 
 So when is the right time to use one over the other? 
 We want to use instance variables when there is data specific to the single instance of the class that needs methods applied to it. 
@@ -43,16 +48,19 @@ We want to use instance variables when there is data specific to the single inst
 
 Using class methods is a better idea when we are dealing with anything that does not deal with a specific instance of that class. AKA when we want to use the methids within the class, or pass the method onto a child via inheritance. 
 ActiveRecord, under the hood in Rails is a good example of this concept:
-`module ActiveRecord`
-  `class Base`
-    `def self.validates_presence_of(...)`
-      `# make sure present`
-    `end`
- `end`
-`end`
-
+```ruby
+module ActiveRecord
+  class Base
+    def self.validates_presence_of(...)
+      # make sure present
+    end
+ end
+end
+```
 The above code in ActiveRecord class gives us the ability to then call in our new model class:
-`class Model < ActiveRecord::Base`
-  `validates_presence_of :name`
-`end`
-`When you say validates_presence_of, the class method in AR::Base is what gets called.
+```ruby
+class Model < ActiveRecord::Base
+  validates_presence_of :name
+end
+```
+When you say `validates_presence_of`, the class method in AR::Base is what gets called.
