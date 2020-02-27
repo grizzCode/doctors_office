@@ -8,5 +8,7 @@
 <h5><%= "Patient: #{@patient.full_name}"%></h5>
 <h5><%= "Appointment with: #{@doctor.full_name}, #{@doctor.specialty}"%></h5>
 <p><%= "Scheduled : #{@appointment.date}"%></p>
+<hr>
+<%= link_to "Comments", appointment_comment_path(@appointment) %>
 
 
