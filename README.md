@@ -9,20 +9,18 @@ Defining a method inside a class creates an instance method on that class. Any f
 There is a difference between a class and an instance method in Ruby. Firstly, a class method can only be called on the class itself later in your code. It can't be called on a single instance of the class. Conversely, an instance method can only be called on an instance of a class and not the class itself. 
 
 Let's look at a code example to illustrate this:
+```ruby
+class ClassName
 
-`def ClassName`
+ def  self.class_method
+    puts "I am a class method"
+ end
 
- `def  self.class_method`
-    `puts "I am a class method"`
- `end`
-
- `def instance_method`
-    `puts "I am an instance method"`
- `end`
-
-
-`end`
-
+ def instance_method
+    puts "I am an instance method"
+ end
+end
+```
 If we try to call:
 `ClassName.class_method` this will return => "I am a class method"
 
